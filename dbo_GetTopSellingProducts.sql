@@ -68,14 +68,16 @@ begin
 			   ,r.TotalSalePrice
 		from	#results as r;
 
-		insert into DBCache.dbo_GetTopSellingProducts_Control (
+		insert into DBCache.dbo_GetTopSellingProducts_Control
+		(
 			Id
 			,CacheDateTime
 			,ExpiryDateTime
 			,Param_CategoryId
 			,UseCount
 		)
-		values  (
+		values
+		(
 			@cacheControlId
 			,getutcdate()
 			,dateadd(minute,@CACHE_DURATION_MINUTES,getutcdate())
