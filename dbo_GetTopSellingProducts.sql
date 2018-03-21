@@ -106,6 +106,4 @@ begin
 		from #results as r
 		order by r.TotalSalePrice desc;
 	end
-
-	/* END: DBCache */
 end
